@@ -211,17 +211,6 @@ body {
     gap: 0.5rem;
 }
 
-/* Responsive Typography */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.875rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-}
-
 /* Add these styles for Lucide icons */
 [data-lucide] {
     width: 24px;
