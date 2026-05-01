@@ -1,44 +1,53 @@
 // Use Cases Data
 const useCases = [
     {
+        title: "Prospecting",
+        icon: "search",
+        items: [
+            "Identify prospective businesses and organizations, then research relevant contacts",
+            "Find people expressing a need for your services"
+        ]
+    },
+    {
         title: "Marketing and Sales",
         icon: "mail",
         items: [
-            "Writing e-mails, marketing copy and social media posts",
-            "Acting as a sales assistant",
-            "Creating images, audio and music for advertising"
+            "Create emails, marketing copy and social media posts",
+            "Support sales outreach, follow-up and customer communication",
+            "Generate images, audio and music for advertising"
         ]
     },
     {
         title: "Communication",
         icon: "message-square",
         items: [
-            "Managing e-mail and other communications",
-            "Taking, summarizing and documenting meeting notes"
+            "Manage your inbox and keep you informed of important messages",
+            "Take, summarize and document meeting notes"
         ]
     },
     {
         title: "Process Automation",
         icon: "cog",
         items: [
-            "Acting as a customer service agent",
-            "Centralizing and simplifying access to company knowledge"
+            "Navigate websites and portals to capture information or respond to opportunities",
+            "Replace manual tasks that are hard to scale",
+            "Provide basic customer support and triage"
         ]
     },
     {
         title: "Analysis",
         icon: "bar-chart-3",
         items: [
-            "​Reviewing and analyzing documents",
-            "Analyzing data and reporting",
-            "Tracking and reporting on competitor activity and news"
+            "Review and analyze documents",
+            "Make sense of spreadsheets, sales reports, and other business data",
+            "Track and report on competitor activity and news"
         ]
     },
     {
         title: "Strategy",
         icon: "brain",
         items: [
-            "Consulting on business strategy and tactics"
+            "Consult on business strategy and tactics"
         ]
     }
 ];
