@@ -52,57 +52,117 @@ const useCases = [
     }
 ];
 
-// Initialize Lucide icons
-if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-}
-
 // Render use cases cards
 function renderUseCases() {
-    const cardsGrid = document.querySelector('.cards-grid');
+    const cardsGrid = document.querySelector('#use-cases .cards-grid');
     if (!cardsGrid) return;
-    
+
     useCases.forEach(useCase => {
-        const card = document.createElement('div');
+        const card = document.createElement('article');
         card.className = 'card';
-        
-        const cardContent = `
+
+        card.innerHTML = `
             <div class="card-header">
                 <i data-lucide="${useCase.icon}"></i>
-                <h3 class="card-title gradient-text">${useCase.title}</h3>
+                <h3 class="card-title">${useCase.title}</h3>
             </div>
             <ul class="card-list">
                 ${useCase.items.map(item => `<li>${item}</li>`).join('')}
             </ul>
         `;
-        
-        card.innerHTML = cardContent;
+
         cardsGrid.appendChild(card);
     });
-    
-    // Reinitialize icons for newly added elements
+
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 }
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
+// Smooth scrolling for navigation links + close mobile nav after click
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+
+                // Close mobile menu after navigating
+                const navLinks = document.getElementById('primary-nav');
+                const navToggle = document.querySelector('.nav-toggle');
+                if (navLinks && navLinks.classList.contains('open')) {
+                    navLinks.classList.remove('open');
+                    if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    });
+}
+
+// Mobile nav toggle
+function initMobileNav() {
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('primary-nav');
+    if (!toggle || !navLinks) return;
+
+    toggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+}
+
+// Scroll-spy: highlight nav link of section currently in view
+function initScrollSpy() {
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    if (!sections.length || !navLinks.length) return;
+
+    const linkMap = new Map();
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            linkMap.set(href.substring(1), link);
         }
     });
-});
 
-// Initialize the page
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    const activeLink = linkMap.get(id);
+                    if (activeLink) activeLink.classList.add('active');
+                }
+            });
+        },
+        {
+            rootMargin: '-40% 0px -55% 0px',
+            threshold: 0
+        }
+    );
+
+    sections.forEach(section => observer.observe(section));
+}
+
+// Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
-    // Wait a brief moment to ensure Lucide is loaded
+    // Initial Lucide icon pass for static markup
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+
+    initMobileNav();
+    initSmoothScroll();
+
+    // Render dynamic content + re-init icons, then start scroll-spy
     setTimeout(() => {
         renderUseCases();
-    }, 100);
-}); 
+        initScrollSpy();
+    }, 50);
+});

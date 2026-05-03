@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Eastman AI Consulting</title>
+    <title>Bill Eastman AI Consulting — Practical AI Help for Small Businesses</title>
+    <meta name="description" content="Down-to-earth AI consulting for small businesses. I help service businesses use AI to find better leads, win more bids, and stop wasting hours on admin work.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons - Add specific version and include both scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
-    <nav class="navbar">
+    <a href="#home" class="skip-link">Skip to content</a>
+
+    <nav class="navbar" aria-label="Primary">
         <div class="container nav-container">
-            <a href="#home" class="logo">
+            <a href="#home" class="logo" aria-label="Bill Eastman AI — Home">
                 <span class="logo-text">
                     <span class="logo-main">BillEastman</span><span class="logo-ai">AI</span>
                 </span>
             </a>
-            <ul class="nav-links">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#use-cases">Use Cases</a></li>
-                <li><a href="#practical-examples">Practical AI Examples</a></li>
-                <li><a href="#tutorials">Tutorials and Demos</a></li>
+                <li><a href="#practical-examples">Examples</a></li>
+                <li><a href="#process">How We Work</a></li>
+                <li><a href="#tutorials">Videos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -29,23 +40,90 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="section">
-            <div class="container">
-                <h1 class="gradient-text">Practical AI Help for Small Businesses</h1>
-                <h2 class="gradient-text">I help businesses find simple, usable ways to improve prospecting, marketing and automation with AI.</h2>
-                <div class="tagline gradient-text">Down to Earth Advice For Busy People</div>
-                <a href="#contact" class="button">Let's Talk</a>
+        <section id="home" class="section section-hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">AI Consulting for Small Business</p>
+                    <h1>Practical AI help for <span class="accent-text">small teams with real work to do</span></h1>
+                    <p class="hero-sub">I help service businesses, contractors, and local firms use AI to find better leads, win more bids, and reclaim hours every week from repetitive admin work.</p>
+                    <p class="tagline">Down-to-earth advice for busy people</p>
+                    <div class="hero-ctas">
+                        <a href="#contact" class="button button-primary">Let's talk</a>
+                        <a href="https://www.youtube.com/@BillEastmanAI" target="_blank" rel="noopener noreferrer" class="button button-ghost">Watch a quick demo</a>
+                    </div>
+                    <p class="hero-credibility">Fortune 10 AI experience, now available to small businesses</p>
+                </div>
+                <div class="hero-portrait">
+                    <div class="portrait-frame">
+                        <img src="assets/profile_pic.jpeg" alt="Bill Eastman, AI consultant" loading="eager">
+                    </div>
+                </div>
             </div>
         </section>
+
+        <div class="divider"></div>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container about-grid">
+                <div class="about-copy">
+                    <p class="eyebrow">About Bill</p>
+                    <h2>I've spent my career making technology useful for people who don't have time to chase it.</h2>
+
+                    <p>I spent a decade leading data science and AI teams at AT&T — building the kinds of systems that most small businesses never get access to. Now I help smaller organizations close that gap.</p>
+                    <p>After years working at scale — real-time machine learning, generative AI applications, analytics platforms used across a Fortune 10 company — I've seen what these tools can actually do when they're implemented well. Most of what's written about AI for business isn't built for organizations without a dedicated IT team or a six-figure software budget. That's the problem I'm here to solve.</p>
+                    <p>I work with small businesses, nonprofits, and local organizations that suspect AI could help but don't know where to start. I help bring you up to speed on the tools that can address your needs and bring you real results.</p>
+                </div>
+                <div class="about-credentials">
+                    <h3>What I bring</h3>
+                    <ul class="credentials-list">
+                        <li><strong>A decade</strong> of hands-on AI and data science</li>
+                        <li><strong>Experience</strong> translating complex technology into plain English</li>
+                        <li><strong>A practical approach</strong> — that accounts for your needs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Testimonial / Case Study Strip
+        <section id="proof" class="section section-proof">
+            <div class="container">
+                <p class="eyebrow centered">Recent Results</p>
+                <div class="proof-grid">
+                    <figure class="testimonial">
+                        <blockquote>
+                            <p>Bill cut our RFP response time from four hours to about thirty minutes. He didn't sell us software — he showed us how to use what we already had. Best money we've spent this year.</p>
+                        </blockquote>
+                        <figcaption>
+                            <span class="cite-name">[Client Name]</span>
+                            <span class="cite-role">Owner, [Roofing &amp; Restoration Company]</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="case-stat">
+                        <div class="stat-number">87%</div>
+                        <p class="stat-label">reduction in time spent reviewing incoming bid invitations for a regional contractor.</p>
+                    </figure>
+                    <figure class="case-stat">
+                        <div class="stat-number">3x</div>
+                        <p class="stat-label">qualified leads per week after deploying social-listening workflows for a home-services firm.</p>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    -->
 
         <div class="divider"></div>
 
         <!-- Use Cases Section -->
         <section id="use-cases" class="section">
             <div class="container">
-                <h2 class="gradient-text">Use Cases</h2>
+                <p class="eyebrow">What AI Can Do For You</p>
+                <h2>Use Cases</h2>
+                <p class="section-description">A snapshot of where AI is already paying off for small and mid-sized businesses today.</p>
                 <div class="cards-grid">
-                    <!-- Cards will be inserted here by JavaScript -->
+                    <!-- Cards inserted by JavaScript -->
                 </div>
             </div>
         </section>
@@ -55,43 +133,78 @@
         <!-- Practical AI Examples Section -->
         <section id="practical-examples" class="section">
             <div class="container">
-                <h2 class="gradient-text">Practical AI Examples</h2>
+                <p class="eyebrow">Real Tools, Real Results</p>
+                <h2>Practical AI Examples</h2>
+                <p class="section-description">A few of the working tools and workflows I've built with clients. Each one solves a specific, recurring problem.</p>
                 <div class="examples-grid">
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">Business Prospecting Tool</h3>
+                            <i data-lucide="target"></i>
+                            <h3 class="card-title">Business Prospecting Tool</h3>
                         </div>
-                        <p class="card-description">Target businesses in a selected area and research relevant decision-makers.</p>
-                    </div>
+                        <p class="card-description">Target businesses in a selected area and research relevant decision-makers — automatically.</p>
+                    </article>
 
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">Social Listening Tool</h3>
+                            <i data-lucide="ear"></i>
+                            <h3 class="card-title">Social Listening Tool</h3>
                         </div>
-                        <p class="card-description">Find people on Nextdoor, Reddit, and other forums who are expressing a need for your service.</p>
-                    </div>
+                        <p class="card-description">Find people on Nextdoor, Reddit, and other forums who are actively expressing a need for your service.</p>
+                    </article>
 
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">RFP and Bid Capture Tool</h3>
+                            <i data-lucide="file-text"></i>
+                            <h3 class="card-title">RFP and Bid Capture Tool</h3>
                         </div>
-                        <p class="card-description">Track RFPs and invitations to bid, then organize the information needed to respond.</p>
-                    </div>
+                        <p class="card-description">Track RFPs and invitations to bid, then organize the information needed to respond — in minutes, not hours.</p>
+                    </article>
 
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">Social Media Tool</h3>
+                            <i data-lucide="megaphone"></i>
+                            <h3 class="card-title">Social Media Tool</h3>
                         </div>
-                        <p class="card-description">Create, repurpose, schedule, and manage social media content.</p>
-                    </div>
+                        <p class="card-description">Create, repurpose, schedule, and manage social media content without a full-time marketer.</p>
+                    </article>
 
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">Workflow Automation</h3>
+                            <i data-lucide="workflow"></i>
+                            <h3 class="card-title">Workflow Automation</h3>
                         </div>
-                        <p class="card-description">Capture incoming requests, route information, and reduce repetitive admin work.</p>
-                    </div>
+                        <p class="card-description">Capture incoming requests, route information, and replace the repetitive admin work that's eating your week.</p>
+                    </article>
                 </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- How We Work Section -->
+        <section id="process" class="section">
+            <div class="container">
+                <p class="eyebrow">No Six-Month Project Plans</p>
+                <h2>How we'd work together</h2>
+                <p class="section-description">Most engagements start small and move fast. Here's the typical shape.</p>
+                <ol class="process-steps">
+                    <li class="process-step">
+                        <div class="step-number">01</div>
+                        <h3>Coffee or a Zoom call</h3>
+                        <p>We talk through your business, the bottlenecks you're feeling, and where AI realistically fits. No prep needed, no slides.</p>
+                    </li>
+                    <li class="process-step">
+                        <div class="step-number">02</div>
+                        <h3>Opportunity map</h3>
+                        <p>I send back a short, plain-English write-up of the one or two highest-leverage places to start, with rough effort and impact estimates.</p>
+                    </li>
+                    <li class="process-step">
+                        <div class="step-number">03</div>
+                        <h3>Pilot a tool</h3>
+                        <p>We build a working tool or workflow for your real business — not a demo. You see results in weeks, and you keep what we build.</p>
+                    </li>
+                </ol>
             </div>
         </section>
 
@@ -100,47 +213,53 @@
         <!-- Tutorials Section -->
         <section id="tutorials" class="section">
             <div class="container">
-                <h2 class="gradient-text">AI Videos and Resources</h2>
+                <p class="eyebrow">Free Resources</p>
+                <h2>AI Videos and Resources</h2>
                 <p class="section-description">I create practical videos showing how small businesses can use AI for marketing, automation, research, content creation, and day-to-day operations.</p>
 
                 <div class="topics-grid">
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">AI Basics for Small Businesses</h3>
+                            <i data-lucide="book-open"></i>
+                            <h3 class="card-title">AI Basics for Small Businesses</h3>
                         </div>
                         <p class="card-description">Beginner-friendly explanations of AI tools and how they can be used in real businesses.</p>
-                    </div>
+                    </article>
 
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">ChatGPT and Everyday Productivity</h3>
+                            <i data-lucide="message-square"></i>
+                            <h3 class="card-title">ChatGPT and Everyday Productivity</h3>
                         </div>
                         <p class="card-description">Practical examples for writing, research, analysis, and daily business tasks.</p>
-                    </div>
+                    </article>
 
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">AI for Marketing Images and Video</h3>
+                            <i data-lucide="image"></i>
+                            <h3 class="card-title">AI for Marketing Images and Video</h3>
                         </div>
                         <p class="card-description">How small businesses can create visuals, avatars, and videos using modern AI tools.</p>
-                    </div>
+                    </article>
 
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">Office Automation</h3>
+                            <i data-lucide="cog"></i>
+                            <h3 class="card-title">Office Automation</h3>
                         </div>
                         <p class="card-description">Examples of using AI with tools like Zapier to reduce repetitive administrative work.</p>
-                    </div>
+                    </article>
 
-                    <div class="card">
+                    <article class="card">
                         <div class="card-header">
-                            <h3 class="card-title gradient-text">AI for Search, Prospecting, and Business Research</h3>
+                            <i data-lucide="search"></i>
+                            <h3 class="card-title">AI for Search, Prospecting, and Research</h3>
                         </div>
                         <p class="card-description">Ways AI can help businesses find opportunities, research prospects, and understand changing search behavior.</p>
-                    </div>
+                    </article>
                 </div>
 
-                <a class="button youtube-button" href="https://www.youtube.com/@BillEastmanAI" target="_blank" rel="noopener noreferrer">Visit the YouTube Channel</a>
+                <a class="button button-primary youtube-button" href="https://www.youtube.com/@BillEastmanAI" target="_blank" rel="noopener noreferrer">Visit the YouTube Channel</a>
             </div>
         </section>
 
@@ -148,9 +267,10 @@
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <div class="container">
-                <h2 class="gradient-text">Contact</h2>
-                <p class="section-description">Have questions about how AI could help your business? Let’s talk through your goals, challenges, and possible next steps.</p>
+            <div class="container contact-wrap">
+                <p class="eyebrow">Let's Talk</p>
+                <h2>See if AI fits your business.</h2>
+                <p class="section-description">Have questions about how AI could help? Send a quick note about your business and the challenge you're trying to solve. Most replies go out within one business day.</p>
 
                 <div class="contact-card">
                     <div class="contact-details">
@@ -158,11 +278,22 @@
                             <div class="contact-label">Email</div>
                             <a href="mailto:billeastmanai@gmail.com" class="contact-value">billeastmanai@gmail.com</a>
                         </div>
+                        <div class="contact-row">
+                            <div class="contact-label">Response time</div>
+                            <span class="contact-value">Within one business day</span>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-label">First call</div>
+                            <span class="contact-value">Chat about your business over coffee or on Zoom</span>
+                        </div>
                     </div>
 
                     <div class="contact-actions">
-                        <a class="button" href="mailto:billeastmanai@gmail.com">Send an Email</a>
-                        <a class="contact-secondary-link" href="https://www.linkedin.com/in/bill-eastman-79a0459/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                        <a class="button button-primary" href="mailto:billeastmanai@gmail.com">Send an Email</a>
+                        <a class="contact-secondary-link" href="https://www.linkedin.com/in/bill-eastman-79a0459/" target="_blank" rel="noopener noreferrer">
+                            <i data-lucide="linkedin"></i>
+                            <span>Connect on LinkedIn</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -170,11 +301,23 @@
     </main>
 
     <footer class="site-footer">
-        <div class="container">
-            © 2026 Bill Eastman AI. All rights reserved.
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text logo-text-sm">
+                    <span class="logo-main">BillEastman</span><span class="logo-ai">AI</span>
+                </span>
+                <p class="footer-tagline">Down-to-earth AI advice for busy people.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#process">How We Work</a>
+                <a href="#tutorials">Videos</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-meta">© 2026 Bill Eastman AI. All rights reserved.</div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
